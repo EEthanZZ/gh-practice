@@ -3,7 +3,14 @@ on:
   pull_request:
     types:
       - opened
+    branches:
+      - master
+      - dev
+
   workflow_dispatch:
+  push:
+    branches:
+      - master
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -18,5 +25,12 @@ jobs:
         run: npm test
       - name: Build
         run: npm run build
+      - name: Upload Artifaces
+        uses: actions/upload-artifact@v3
+          with:
+            name: dist-files
+            path: |
+              dist
+              package.json
       - name: Deploy
         run: echo "Deploying..."
