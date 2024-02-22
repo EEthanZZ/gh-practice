@@ -39,7 +39,7 @@ jobs:
         uses: actions/download-artifact@v3
         with:
           name: dist-files
-      - name: Outpus contents:
+      - name: Outpus contents
         run: ls
       - name: Dedploy
         run: echo "Deploying..."
