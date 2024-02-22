@@ -23,9 +23,9 @@ jobs:
           path: ~/.npm
           key: deps-node-modules-${{ hashFiles('**/package-lock.json') }}
       - name: Install Dependencies
-        uses: npm ci
+        run: npm ci
       - name: Test Code
-        uses: npm run test
+        run: npm run test
   build:
     runs-on: ubuntu-latest
     outputs:
