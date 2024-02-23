@@ -2,7 +2,7 @@ name: Matrix Demo
 on: push
 jobs:
   build:
-    continur-on-error: true
+    continue-on-error: true
     stratagy:
       matrix:
         node-version: [14, 16]
