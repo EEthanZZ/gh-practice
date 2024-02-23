@@ -3,7 +3,7 @@ on:
   push:
     branches:
       - main
-      - control
+      - reuse
 
 jobs:
   lint:
@@ -73,16 +73,7 @@ jobs:
 
   deploy:
     needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Get build artifacts
-        uses: actions/download-artifact@v3
-        with:
-          name: dist-files
-      - name: Output contents
-        run: ls
-      - name: Deploy
-        run: echo "Replace this with actual deployment commands"
+    uses: ./.github/workflows/reusable.yml
 
   report:
     needs: [lint, deploy]
