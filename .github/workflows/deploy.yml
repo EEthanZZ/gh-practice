@@ -7,7 +7,7 @@ on:
       - db
 env:
   MONGODB_DB_NAME: demo
-jobs:
+jobs: 
   test:
     env:
       MONGODB_USERNAME: ${{ secrets.MONGODB_USERNAME }}
