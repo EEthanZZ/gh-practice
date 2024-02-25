@@ -1,0 +1,19 @@
+name: 'Deplot to S3'
+description: 'Deploy a static web vis S3'
+inputs:
+  bucket: 
+    description: 'my s3 bucket:'
+    required: true
+  bucket-region:
+    description: 'The region of the S3'
+    required: false
+    default: 'us-east-1'
+  dist-folder:
+    description: 'The folder contains the deploying files'
+    required: true
+outputs:
+  website-url:
+    description: 'URL of deployed website'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
