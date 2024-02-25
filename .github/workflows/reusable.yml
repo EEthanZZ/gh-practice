@@ -27,5 +27,5 @@ jobs:
         run: echo "output"
       - name: Set Result Output
         id: set-result
-        run: echo "step-result=seucess" >> $GitHub_OUTPUT
+        run: echo "step-result=seucess" >> $GITHUB_OUTPUT
 
